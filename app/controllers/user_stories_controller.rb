@@ -36,8 +36,7 @@ class UserStoriesController < ApplicationController
   def edit
   
   end
-  
-  
+
   private
   
   def set_project

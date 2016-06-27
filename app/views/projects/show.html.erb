@@ -9,12 +9,12 @@
       <h2>No user stories to display</h2>  
     </div>
   <% else %>
-    <div class="row sortable" data-id="<%= user_story.id %>">
+    <div class="row">
       <div class="panel panel-info">
         <div class="panel-body">
           <%= render user_story %>
         </div>
-        <div class="panel-footer"<%= user_story.id %>">
+        <div class="panel-footer">
           <%= link_to 'Edit User Story', edit_project_user_story_path(@project, user_story.id), class: "btn btn-primary" %>
           <%= link_to 'Delete', project_user_story_path(@project, user_story.id), method: :delete, data: { confirm: "Are you sure" }, class: "btn btn-danger" %>
         </div>
