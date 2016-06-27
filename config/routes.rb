@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
  
-  resources :user_stories
-  resources :projects
- root 'projects#index'
+  resources :projects do
+    resources :user_stories
+  end
+ 
+  root 'projects#index'
+  
 end

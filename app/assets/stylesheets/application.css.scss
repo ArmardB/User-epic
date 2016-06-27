@@ -1,0 +1,92 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ 
+ @import "bootstrap-sprockets";
+ @import "bootstrap"; 
+ 
+ @mixin box-shadow {
+	-webkit-box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
+	-moz-box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
+	box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
+}
+
+$red: #DB6161;
+
+.highlight {
+  font-weight: 700;
+  color: #03a9f4;
+  font-size: 1.25em;
+}
+
+.navbar {
+	margin-bottom: 50px;
+	@include box-shadow;
+	border: none;
+	.navbar-brand {
+		text-transform: uppercase;
+		letter-spacing: -1px;
+		font-weight: bold;
+		font-size: 25px;
+		a {
+			color: $red;
+		}
+	}
+}
+
+.alert {
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 5px;
+	@include box-shadow;
+	background: white;
+	font-weight: bold;
+}
+
+
+a.btn {
+  color: #fff;
+  .a:visited {
+    color: #fff;
+  }
+}
+
+h2.project_title {
+  text-align: left;
+}
+
+p.project_sub_title {
+    text-align: left;
+    
+    font-size: 1.25em;
+    color: #009dff;
+    text-align: left;
+    border-bottom: 1px solid red;
+    padding-bottom: 15px;
+  }
+  
+.sortable-placeholder {
+  border: 1px dashed #CCC;
+  background-color: #f9f9f9;
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+.sortable {
+  display: list-item;
+  list-style: none;
+}
+  
