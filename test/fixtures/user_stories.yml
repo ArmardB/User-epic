@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  param1: MyString
+  param2: MyString
+  param3: MyString
+  references: 
+
+two:
+  param1: MyString
+  param2: MyString
+  param3: MyString
+  references: 
