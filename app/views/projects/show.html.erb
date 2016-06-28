@@ -2,34 +2,33 @@
 <h2 class="project_title">Project: <%= @project.title %></h2>
 <p class="project_sub_title">Description: <%= @project.description%></p>
 
-<h3>User Stories</h3>
-<% @project.user_stories.each do |user_story| %>
-  <% if user_story.nil? %>
-    <div class="project-wrapper">
-      <h2>No user stories to display</h2>  
-    </div>
-  <% else %>
-    <div class="row">
-      <div class="panel panel-info">
-        <div class="panel-body">
-          <%= render user_story %>
-        </div>
-        <div class="panel-footer">
-          <%= link_to 'Edit User Story', edit_project_user_story_path(@project, user_story.id), class: "btn btn-primary" %>
-          <%= link_to 'Delete', project_user_story_path(@project, user_story.id), method: :delete, data: { confirm: "Are you sure" }, class: "btn btn-danger" %>
-        </div>
-      </div>
-    </div>
+<div class="row">
+  <div class="panel panel-info">
+    <div class="panel-body">
+      <table class="table table-bordered table-striped" id="sortable">
+        <thead>
+          <tr>
+            <th>
+              User Stories
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @project.user_stories.each do |user_story| %>
+          <tr data-item-id=<%= "#{user_story.param1}" %> class="item"></tr>
+          <td>
+            <p><strong>As a</strong>    <span class="highlight"><%= user_story.param1 %></span>,
+              <strong> I want</strong>  <span class="highlight"><%= user_story.param2 %></span> ,
+              <strong> so that</strong>  <span class="highlight"><%= user_story.param3 %></span>.</p>
+            <%= link_to 'Edit User Story', edit_project_user_story_path(@project, user_story.id), class: "btn btn-primary" %>
+            <%= link_to 'Delete', project_user_story_path(@project, user_story.id), method: :delete, data: { confirm: "Are you sure" }, class: "btn btn-danger" %>
+          </td>
+          <% end %>
+        </tbody>
+      </table>
       
-  <% end %>
-<% end %>
-
-<div id="form">
-  <%= render 'user_stories/form' %>
+      <%= link_to 'New User story', new_project_user_story_path(@project.id), class: "btn btn-success" %>
+    </div>
+  </div>
 </div>
-
-<div class="links">
-  <%= link_to 'Back', projects_path %> |
-  <%= link_to 'Edit', edit_project_path %> |
-  <%= link_to 'Delete', project_path(@project), method: :delete, data: { confirm: "Are you sure?"} %>
-</div
+ 

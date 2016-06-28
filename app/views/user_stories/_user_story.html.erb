@@ -1,6 +1,12 @@
 <div class="user_story">
-    As a <span class="highlight"><%= user_story.param1 %></span> 
-    I want... <span class="highlight"><%= user_story.param2 %></span>
-    So that...<span class="highlight"><%= user_story.param3 %></span>
+    <table class="table table-bordered table-striped" id="sortable">
+        <tbody>
+            <tr data-item-id=<%= "#{user_story.id}" %> class="item">As a <span class="highlight"><%= user_story.param1 %></span> </tr>
+            <tr data-item-id=<%= "#{user_story.id}" %> class="item">I want... <span class="highlight"><%= user_story.param2 %></span></tr>
+            <tr data-item-id=<%= "#{user_story.id}" %> class="item">So that...<span class="highlight"><%= user_story.param3 %></span></tr>
+            <%= link_to 'Edit User Story', edit_project_user_story_path(@project, user_story.id), class: "btn btn-primary" %>
+            <%= link_to 'Delete', project_user_story_path(@project, user_story.id), method: :delete, data: { confirm: "Are you sure" }, class: "btn btn-danger" %>
+        </tbody>
+    </table>
 </div>
 

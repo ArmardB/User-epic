@@ -2,6 +2,18 @@ class UserStoriesController < ApplicationController
   before_action :set_project
   before_action :set_user_story, except: [:create]
 
+  def index
+    @user_story = @project.user_stories.rank(:row_order).all
+  end
+  
+  def update_row_order
+    @user_story.row_order_position = user_story_params[:row_order_position]
+    @user_story.save
+    
+    render nothing:true # this is a POST action, updates sent via AJAX, no view rendered
+    
+  end
+  
   def create
     @user_story = @project.user_stories.create(user_story_params)
     redirect_to @project
@@ -48,7 +60,7 @@ class UserStoriesController < ApplicationController
   end
   
   def user_story_params
-    params[:user_story].permit(:param1, :param2, :param3)
+    params[:user_story].permit(:param1, :param2, :param3, :row_order_position)
   end
   
 end
