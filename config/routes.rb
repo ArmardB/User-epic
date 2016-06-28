@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
  
-  devise_for :users
   
+  devise_for :users
   resources :projects do
     resources :user_stories do
       post :update_row_order, on: :collection

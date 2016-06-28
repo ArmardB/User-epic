@@ -18,26 +18,33 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">UserEpic</a>
+      <a class="navbar-brand"<%= link_to 'UserEpic', root_path %></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li>
+        <% if user_signed_in? %>
+          <li><a href="#">Create New Project</a></li>
+        <% end %>  
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
-        <li><a href="#">Link</a></li>
+        <% if user_signed_in? %>
+          <li><a <%= link_to 'PROJECTS', projects_path %></a></li>
+          <li><a <%= link_to 'ACCOUNT', edit_user_registration_path %></a></li>
+          <li><a <%= link_to 'SIGN OUT', destroy_user_session_path %></a></li>
+        <% else %>
+          <a role="button" class="btn btn-info btn-sm hero nav" <%= link_to 'SIGN IN', user_session_path %> </a>
+          <a role="button" class="btn btn-success btn-sm hero nav" <%= link_to 'SIGN UP', new_user_registration_path %> </a>
+        <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
 <div class="container">
   <body>
-     <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
        
     <%= yield %>
 </div>

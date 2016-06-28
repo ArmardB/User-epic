@@ -67,15 +67,14 @@ a.btn {
 }
 
 h2.project_title {
-  text-align: left;
+  text-align: center;
+  margin: 0 auto;
 }
 
 p.project_sub_title {
-    text-align: left;
-    
+    text-align: center;
     font-size: 1.25em;
     color: #000;
-    text-align: left;
     padding-bottom: 15px;
   }
   
@@ -86,32 +85,46 @@ box-shadow: rgba(133,133,133,0.1) 0 0 5px 2px,rgba(133,133,133,0.3) 0 0 2px;
 }
 
 p.hero {
-	line-height: 1.2em;
+  line-height: 1.2em;
   font-family: "Lato, Georgia, Times New Roman";
+  text-align: center;
+  padding-top: 12px;
+  color: #fff;
+  font-weight: 500;
+  text-shadow: 1px 1px 1px #000;
+}
+
+h1.hero {  
+  margin: 0 auto;
+  text-align: center;
+  color: rgba(255, 149, 84, 0.74);
+  text-shadow: 3px 2px 9px #000;
+  margin-top: 32px;
 }
 
 .jumbotron {
-		background-image: url('user-story.png');
+		background-image: url('desktop.png');
     background-size: cover;
     height: 450px;
-    background-size: 500px 450px;
+    background-size: 960px 450px;
     background-repeat: no-repeat;
-    background-position-x: 460px;
-    background-position-y: 6px;
     width: 960px;
     margin: 0 auto;
     background-color: white;
 }
   
 body {
- 	height: 100%;
-  background: -webkit-linear-gradient(top, #1e5799 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%);
-  background:    -moz-linear-gradient(top, #1e5799 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%);
-  background:    -moz-linear-gradient(top, #1e5799 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%);
-  background:     -ms-linear-gradient(top, #1e5799 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%);
-  background:      -o-linear-gradient(top, #1e5799 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%);
-  background:         linear-gradient(top, #1e5799 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%);
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a7c7dc+0,85b2d3+100;Blue+Grey+3D */
+  background: #a7c7dc; /* Old browsers */
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#a7c7dc), to(#85b2d3));
+  background: -webkit-linear-gradient(#a7c7dc 0%, #85b2d3 100%);
+  background: -moz-linear-gradient(#a7c7dc 0%, #85b2d3 100%);
+  background: -o-linear-gradient(#a7c7dc 0%, #85b2d3 100%);
+  background: linear-gradient(#a7c7dc 0%, #85b2d3 100%); /* FF3.6-15 */ /* Chrome10-25,Safari5.1-6 */ /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a7c7dc', endColorstr='#85b2d3',GradientType=0 ); /* IE6-9 */
+
   font-family: 'Lato', sans-serif;
+  
 }
 
 .hero {
@@ -162,9 +175,20 @@ div.feature-image-1 {
   box-shadow: 1px 2px 25px 3px;
 }
 
-a.btn.btn-success.btn-lg.hero.center {
-  margin-left: 400px;
-  margin-top: 15px;
+a.btn.btn-success.btn-lg.hero {
+  margin-left: 350px;
+  margin-top: 5px;
+}
+
+
+a.btn.btn-info.btn-sm.hero.nav {
+  padding: 6px;
+  margin-top: 10px;
+}
+
+a.btn.btn-success.btn-sm.hero.nav {
+  padding: 6px;
+  margin-top: 10px;
 }
 
 footer {
@@ -174,4 +198,16 @@ footer {
   p {
     text-align: center;
   }
+}
+
+.navbar-brand a {
+  font-size: 1.5em;
+}
+
+a.active {
+  color: red;
+}
+
+.navbar-default.navbar-nav.li.a.active {
+  color: red;
 }
