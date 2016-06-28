@@ -34,7 +34,10 @@ class UserStoriesController < ApplicationController
   end
   
   def edit
+  end
   
+  def move
+    @user_story.move_to! params[:position]
   end
 
   private

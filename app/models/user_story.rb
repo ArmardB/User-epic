@@ -1,5 +1,5 @@
 class UserStory < ActiveRecord::Base
     belongs_to :project
     
-    default_scope { order("priority ASC") }
+    acts_as_sortable
 end

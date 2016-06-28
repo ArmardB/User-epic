@@ -1,4 +1,4 @@
-<div class="user_story">
+<div class="user_story" data-role="user_story<%= user_story.id %>" data-user_story-url="<%= move_project_user_story_url(@project, user_story) %>" data-position="<%= user_story.position %>">
     As a <span class="highlight"><%= user_story.param1 %></span> 
     I want... <span class="highlight"><%= user_story.param2 %></span>
     So that...<span class="highlight"><%= user_story.param3 %></span>

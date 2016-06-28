@@ -12,5 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= sortable
+
+//= require jquery-ui/sortable
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+  $('*[data-role=activerecord_sortable]').activerecord_sortable();
+});
