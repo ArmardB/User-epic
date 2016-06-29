@@ -48,16 +48,25 @@ $red: #DB6161;
 	}
 }
 
-.alert {
-	padding: 15px;
-	margin-bottom: 20px;
-	border: 1px solid transparent;
-	border-radius: 5px;
-	@include box-shadow;
-	background: white;
-	font-weight: bold;
-}
+// p.alert {
+// 	padding: 15px;
+// 	margin-bottom: 20px;
+// 	border: 1px solid transparent;
+// 	border-radius: 5px;
+// 	@include box-shadow;
+// 	background: white;
+// 	font-weight: bold;
+// }
 
+// p.notice {
+// 	padding: 15px;
+// 	margin-bottom: 20px;
+// 	border: 1px solid transparent;
+// 	border-radius: 5px;
+// 	@include box-shadow;
+// 	background: white;
+// 	font-weight: bold;
+// }
 
 a.btn {
   color: #fff;
@@ -106,11 +115,12 @@ h1.hero {
 		background-image: url('desktop.png');
     background-size: cover;
     height: 450px;
-    background-size: 960px 450px;
+    background-size: 1095px 450px;
     background-repeat: no-repeat;
-    width: 960px;
+    width: 86%;
     margin: 0 auto;
     background-color: white;
+    box-shadow: 1px 2px 23px 2px;
 }
   
 body {
@@ -122,10 +132,12 @@ body {
   background: -o-linear-gradient(#a7c7dc 0%, #85b2d3 100%);
   background: linear-gradient(#a7c7dc 0%, #85b2d3 100%); /* FF3.6-15 */ /* Chrome10-25,Safari5.1-6 */ /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a7c7dc', endColorstr='#85b2d3',GradientType=0 ); /* IE6-9 */
-
   font-family: 'Lato', sans-serif;
   
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
 }
+  
 
 .hero {
 	align: right;
@@ -176,7 +188,7 @@ div.feature-image-1 {
 }
 
 a.btn.btn-success.btn-lg.hero {
-  margin-left: 350px;
+  margin-left: 42.5%;
   margin-top: 5px;
 }
 
@@ -194,11 +206,22 @@ a.btn.btn-success.btn-sm.hero.nav {
 footer {
   background: #f8f8f8;
   padding: 20px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
   
   p {
     text-align: center;
   }
 }
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 
 .navbar-brand a {
   font-size: 1.5em;

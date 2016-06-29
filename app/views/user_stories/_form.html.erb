@@ -1,16 +1,16 @@
-<%= form_for([@project, @project.user_stories.build])  do |f| %>
+<%= form_for([@project, @user_story.build]) do |f| %>
 
   <div class="form-group">
     <p>As a ...</p>
-    <%= f.text_area :param1, placeholder: "type of user", class: "form-control"  %>
+    <%= f.text_field :param1, placeholder: "type of user", class: "form-control"  %>
   </div>
   <div class="form-group">
     <p>I want ...</p>
-    <%= f.text_area :param2, placeholder: "desired functionality", class: "form-control" %>
+    <%= f.text_field :param2, placeholder: "desired functionality", class: "form-control" %>
   </div>
   <div class="form-group">
     <p>so that...</p>
-    <%= f.text_area :param3, placeholder: "reason for desired functionality", class: "form-control" %>
+    <%= f.text_field :param3, placeholder: "reason for desired functionality", class: "form-control" %>
   </div>
   <div class="actions">
     <%= f.submit class: "btn btn-primary" %>

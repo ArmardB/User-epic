@@ -1,6 +1,7 @@
 class UserStoriesController < ApplicationController
   before_action :set_project
   before_action :set_user_story, except: [:create]
+  
 
   def index
     @user_story = @project.user_stories.rank(:row_order).all
@@ -19,6 +20,11 @@ class UserStoriesController < ApplicationController
     redirect_to @project
   end
   
+  def new
+    # @user_story = @project.user_stories.new(user_story_params)
+    # redirect_to @project
+  end
+  
   def destroy
     if @user_story.destroy
       flash[:success] = "User story deleted"
@@ -35,9 +41,10 @@ class UserStoriesController < ApplicationController
   
   def update
     respond_to do |format|
-      if @user_story.update(user_story_params)
-        format.html { redirect_to @user_story, notice: 'User story was successfully updated.' }
+      if @project.user_stories.update(@project, user_story_params)
+        format.html { redirect_to project_path(@project), notice: 'User story was successfully updated.' }
         format.json { render :show, status: :ok, location: @user_story }
+        
       else
         format.html { render :edit }
         format.json { render json: @user_story.errors, status: :unprocessable_entity }
@@ -46,7 +53,11 @@ class UserStoriesController < ApplicationController
   end
   
   def edit
+    @project = Project.find(params[:project_id])
+    @user_story = @project.user_stories(params[:id])
+  end
   
+  def show
   end
 
   private
@@ -56,7 +67,7 @@ class UserStoriesController < ApplicationController
   end
   
   def set_user_story
-    @user_story = @project.user_stories.find(params[:id])
+    @user_story = @project.user_stories(params[:id])
   end
   
   def user_story_params

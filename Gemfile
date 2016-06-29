@@ -7,7 +7,6 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'ranked-model'
 gem 'jquery-ui-rails', '~> 5.0', '>= 5.0.5'
 gem 'devise'
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
