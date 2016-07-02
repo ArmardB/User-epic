@@ -1,10 +1,10 @@
 class UserStoriesController < ApplicationController
   before_action :set_project
-  before_action :set_user_story, except: [:create]
+  before_action :set_user_story, except: [:index, :new, :create]
   
 
   def index
-    @user_story = @project.user_stories.rank(:row_order).all
+    @user_stories = @project.user_stories.rank(:row_order).all
   end
   
   def update_row_order
@@ -21,8 +21,9 @@ class UserStoriesController < ApplicationController
   end
   
   def new
-    # @user_story = @project.user_stories.new(user_story_params)
-    # redirect_to @project
+    @user_story = UserStory.new
+    @user_story.project = @project
+    # Set other important default values for display now
   end
   
   def destroy
@@ -34,10 +35,10 @@ class UserStoriesController < ApplicationController
     redirect_to @project
   end
   
-  # def complete
-  #   user_story.update_attribute(completed_at, Time.now)
-  #   redirect_to @project, notice: "User story completed functionality complete"
-  # end
+  def complete
+    @user_story.update_attribute(completed_at, Time.now)
+    redirect_to @project, notice: "User story completed"
+  end
   
   def update
     respond_to do |format|
@@ -54,7 +55,6 @@ class UserStoriesController < ApplicationController
   
   def edit
     @project = Project.find(params[:project_id])
-    @user_story = @project.user_stories(params[:id])
   end
   
   def show

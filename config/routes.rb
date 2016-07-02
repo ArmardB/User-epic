@@ -4,8 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   
   resources :projects do
-    resources :user_stories do
-    end
+    resources :user_stories
   end
   
   resources :user_stories do

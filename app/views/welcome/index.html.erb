@@ -1,8 +1,19 @@
 <div class="jumbotron">
   <h1 class="hero">AGILE DEVELOPMENT</h1>
   <p class="hero">Create, rearrange, and proritize user stories to help you through<br /> the AGILE developement of your project.</p>
-  <p>><a role="button" class="btn btn-success btn-lg hero" <%= link_to 'SIGN UP', new_user_registration_path %></a></p>
+  <% if !user_signed_in? %>
+    <p>><a role="button" class="btn btn-success btn-lg hero" <%= link_to 'SIGN UP', new_user_registration_path %></a></p>
+  <% end %>
 </div>
+<div class="full">
+  <h1>Ranked #1 Tool AGILE DEV by Wired Magazine</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, quaerat, autem ipsa cupiditate doloribus optio
+    deleniti consequuntur rem ducimus mollitia inventore labore ad voluptatibus unde blanditiis velit tenetur consectetur! Eius.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, quaerat, autem ipsa cupiditate doloribus optio
+    deleniti consequuntur rem ducimus mollitia inventore labore ad voluptatibus unde blanditiis velit tenetur consectetur! Eius.
+  </p>
+</div>
+
 
 <div class="row">
   <div class="col-md-3">
@@ -34,6 +45,8 @@
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, quaerat, autem ipsa cupiditate doloribus optio
       deleniti consequuntur rem ducimus mollitia inventore labore ad voluptatibus unde blanditiis velit tenetur consectetur! Eius.
     </p>
-    <p><a class="btn btn-success btn-lg hero center" role="button" <%= link_to 'SIGN UP', new_user_registration_path %></a></p>
+    <% if !user_signed_in? %>
+      <p><a class="btn btn-success btn-lg hero center" role="button" <%= link_to 'SIGN UP', new_user_registration_path %></a></p>
+    <% end %>
   </div>
 </div>
