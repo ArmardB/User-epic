@@ -38,11 +38,6 @@ class UserStoriesController < ApplicationController
     redirect_to @project
   end
 
-  def complete
-    @user_story.update_attribute(completed_at, Time.now)
-    redirect_to @project, notice: "User story completed functionality complete"
-  end
-
   def update
     if @project.user_stories.update(@user_story, user_story_params)
       redirect_to project_path(@project), notice: 'User story was successfully updated.' 
