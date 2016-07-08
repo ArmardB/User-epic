@@ -113,7 +113,7 @@ h1.hero {
 }
 
 .jumbotron {
-		background-image: url('desktop.png');
+		background-image: image-url('desktop.png');
     background-size: cover;
     height: 450px;
     background-size: 1095px 450px;
@@ -164,21 +164,21 @@ body {
 }
 
 div.feature-image-1 {
-	content: url('color-graph.png'); 
+	content: image-url('color-graph.png'); 
 	padding-top: 50px;
   margin: 0 auto;
   padding-bottom: 29px;
 }
 
 .feature-image-2 {
-	content: url('color-handshake.png'); 
+	content: image-url('color-handshake.png'); 
 	padding-top: 50px;
   margin: 0 auto;
   padding-bottom: 29px;
 }
 
 .feature-image-3 {
-	content: url('color-web.png'); 
+	content: image-url('color-web.png'); 
 	padding-top: 50px;
   margin: 0 auto;
   padding-bottom: 29px;
