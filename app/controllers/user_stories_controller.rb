@@ -16,14 +16,17 @@ class UserStoriesController < ApplicationController
   end
 
   def create
-    @user_story = @project.user_stories.create(user_story_params)
-    redirect_to @project
+    @user_story = @project.user_stories.new(user_story_params)
+    if @user_story.save
+      flash[:success] = "User story successfully saved"
+      redirect_to @project
+    else
+      render :new
+    end
   end
 
   def new
     @user_story = UserStory.new
-    @user_story.project = @project
-    # Set other important default values for display now
   end 
 
   def destroy
@@ -41,19 +44,16 @@ class UserStoriesController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if @project.user_stories.update(@project, user_story_params)
-        format.html { redirect_to project_path(@project), notice: 'User story was successfully updated.' }
-        format.json { render :show, status: :ok, location: @user_story }
-      else
-        format.html { render :edit }
-        format.json { render json: @user_story.errors, status: :unprocessable_entity }
-      end
+    if @project.user_stories.update(@user_story, user_story_params)
+      redirect_to project_path(@project), notice: 'User story was successfully updated.' 
+    else
+      render :edit 
     end
   end
 
+
   def edit
-    @project = Project.find(params[:project_id])
+    
   end
 
   def show
@@ -66,10 +66,10 @@ class UserStoriesController < ApplicationController
   end
 
   def set_user_story
-    @user_story = @project.user_stories(params[:id])
+    @user_story = @project.user_stories.find(params[:id])
   end
 
   def user_story_params
-    params[:user_story].permit(:param1, :param2, :param3, :row_order_position)
+    params.require(:user_story).permit(:param1, :param2, :param3, :row_order_position)
   end
 end

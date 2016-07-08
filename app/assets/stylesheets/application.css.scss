@@ -284,3 +284,15 @@ table#sortable.table.table-bordered.table-striped.ui-sortable {
 .container {
   margin: 0 auto;
 }
+
+.notice, .alert {
+  text-align: center;
+  border: 1px solid #FFF;
+  border-radius: 5px;
+  width: 500px;
+  margin: 0 auto;
+  background: #FFF;
+  color: #00BCD4;
+  font-weight: 700;
+  padding: 7px;
+}
